@@ -8,7 +8,7 @@ class Node{
 }
 
 public class BST {
-   static  Node insert_data(Node root,int val){
+  public  static  Node insert_data(Node root,int val){
         if(root==null){
             root=new Node(val);
             return root;
@@ -19,13 +19,15 @@ public class BST {
 
         return root;
      }
-     static void inoOrder(Node root){
+    
+  public  static void inoOrder(Node root){
          if(root==null) return;
          inoOrder(root.left);
          System.out.print(root.data+ " ");
          inoOrder(root.right);
      }
-     public static boolean search(Node root,int key){
+    
+  public static boolean search(Node root,int key){
 
         if(root==null)  return false;
 
@@ -36,12 +38,15 @@ public class BST {
         else   return search(root.right, key);
 
         }
-        static Node build_BST(int values[] ){
+
+    
+     public  static Node build_BST(int values[] ){
             Node root=null;
             for(int i=0;i<values.length;i++)
                root=insert_data(root, values[i]);
             return root;
-        }
+    }
+    
     public static void main(String[] args) {
         int values[]={5,1,3,4,2,7};
         Node root= build_BST(values);
